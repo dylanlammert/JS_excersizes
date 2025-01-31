@@ -5,11 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Function Library Example</title>
     <style>
-
+        input {
+            font-size: 16px;
+            padding: 2px 4px;
+        }
     </style>
 </head>
 <body>
-    
-    
+    <input class="numberInput" type="text">
+    <p></p>
+
+
+    <script>
+        const input = document.querySelector('.numberInput')
+        const para = document.querySelector('p')
+
+        //function declarations
+        function square(num){
+            return num * num;
+        }
+
+        function cube(num){
+            return num *num * num;
+
+        }
+
+        function factorial(num){
+            if (num < 0)
+                return undefined;
+            if (num === 0)
+                return 1;
+            let x = num - 1;
+            while (x > 0){
+                num = num * x;
+                x--;
+            }
+            return num;
+        }
+
+        // print results to the p elememnt
+        input.addEventListener("change", () => {
+            const num = parseFloat(input.value);
+            if (isNaN(num)) {
+                para.textContent = "You need to enter a number!";
+            } 
+            else{
+                para.textContent = `${num} squared is ${square(num)}.` ;
+                para.textContent = `${num} cubed is ${cube(num)}. `;
+                para.textContent = `${num} factorial is ${factorial(num)}. `;
+            }
+        });
+    </script>
 </body>
 </html>
