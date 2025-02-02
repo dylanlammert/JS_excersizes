@@ -14,11 +14,12 @@
 <body>
     <input class="numberInput" type="text">
     <p></p>
-
+    <h1></h1>
 
     <script>
         const input = document.querySelector('.numberInput')
         const para = document.querySelector('p')
+        const headers = document.querySelector('h1')
 
         //function declarations
         function square(num){
@@ -52,7 +53,8 @@
             else{
                 para.textContent = `${num} squared is ${square(num)}.` ;
                 para.textContent = `${num} cubed is ${cube(num)}. `;
-                para.textContent = `${num} factorial is ${factorial(num)}. `;
+                headers.textContent = `${num} factorial is ${factorial(num)}.`;
+                //para.textContent = `${num} factorial is ${factorial(num)}. `;
             }
         });
     </script>
