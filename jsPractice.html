@@ -61,8 +61,14 @@
         ctx.fill();
       }
     }
-
-    btn.addEventListener('click',draw);
+    /**
+     * @param question
+     * @param yes
+     * @param no
+     */
+    let ask = (question, yes, no) => (confirm(question)) ? alert(yes):alert(no);
+    ask("Do you agree", "you agreed", "You canceled");
+    //btn.addEventListener('click',draw);
 
     </script>
 
